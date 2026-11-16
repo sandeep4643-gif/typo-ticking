@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080a10">
+    <title>TYPO TICKING | Defuse or Die</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <header class="topbar">
+            <div class="brand">TYPO<span>TICKING</span></div>
+            <div class="system-status">
+                <span class="status-light"></span> SYSTEM ONLINE
+            </div>
+        </header>
+
+        <!-- SCREEN 1: WELCOME -->
+        <section id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <div class="hero-bomb">💣</div>
+                <p class="eyebrow">A RACE AGAINST TIME</p>
+                <h1 class="main-title">TYPO<br><span>TICKING</span></h1>
+
+                <p class="tagline">
+                    Every second counts.<br>
+                    Every keystroke matters.
+                </p>
+
+                <div class="welcome-warning">
+                    <span class="warning-dot"></span>
+                    EXPLOSIVE DEVICE DETECTED
+                </div>
+
+                <button id="enter-btn" class="btn btn-primary">
+                    ENTER THE MISSION <span>→</span>
+                </button>
+            </div>
+            <p class="screen-footer">YOUR KEYBOARD IS YOUR ONLY WEAPON</p>
+        </section>
+
+        <!-- SCREEN 2: DIFFICULTY -->
+        <section id="difficulty-screen" class="screen">
+            <div class="section-heading">
+                <p class="eyebrow">MISSION PREPARATION</p>
+                <h2>CHOOSE YOUR <span>DIFFICULTY</span></h2>
+                <p>Select the intensity of your defusal mission.</p>
+            </div>
+
+            <div class="difficulty-grid">
+
+                <button class="difficulty-card easy selected"
+                        data-level="easy">
+                    <span class="level-icon">01</span>
+                    <span class="level-name">EASY</span>
+                    <span class="level-time">02:00</span>
+                    <span class="level-description">Beginner challenge</span>
+                    <span class="level-tag">LOW PRESSURE</span>
+                </button>
+
+                <button class="difficulty-card medium"
+                        data-level="medium">
+                    <span class="level-icon">02</span>
+                    <span class="level-name">MEDIUM</span>
+                    <span class="level-time">01:40</span>
+                    <span class="level-description">Intermediate challenge</span>
+                    <span class="level-tag">MODERATE PRESSURE</span>
+                </button>
+
+                <button class="difficulty-card hard"
+                        data-level="hard">
+                    <span class="level-icon">03</span>
+                    <span class="level-name">HARD</span>
+                    <span class="level-time">01:20</span>
+                    <span class="level-description">Expert challenge</span>
+                    <span class="level-tag">EXTREME PRESSURE</span>
+                </button>
+
+            </div>
+
+            <button id="difficulty-continue" class="btn btn-primary">
+                CONTINUE <span>→</span>
+            </button>
+        </section>
+
+        <!-- SCREEN 3: INSTRUCTIONS -->
+        <section id="instructions-screen" class="screen">
+            <div class="section-heading">
+                <p class="eyebrow">CLASSIFIED MISSION DETAILS</p>
+                <h2>MISSION <span>BRIEFING</span></h2>
+                <p>Read carefully. Your survival depends on it.</p>
+            </div>
+
+            <div class="briefing-card">
+                <div class="briefing-top">
+                    <div>
+                        <p class="eyebrow">SELECTED DIFFICULTY</p>
+                        <h3 id="briefing-level">EASY MODE</h3>
+                    </div>
+                    <div class="briefing-time">
+                        <small>INITIAL TIME</small>
+                        <strong id="briefing-time">02:00</strong>
+                    </div>
+                </div>
+
+                <div class="briefing-summary">
+                    <div class="summary-item">
+                        <strong>03</strong>
+                        <span>DEFUSAL STAGES</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>15</strong>
+                        <span>TOTAL SENTENCES</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>+15s</strong>
+                        <span>MAXIMUM BONUS</span>
+                    </div>
+                </div>
+
+                <div class="stage-instructions">
+                    <h3>DEFUSAL SEQUENCE</h3>
+
+                    <div class="instruction-stage">
+                        <span class="stage-number">01</span>
+                        <div>
+                            <strong>INITIAL CIRCUIT</strong>
+                            <p>Complete 5 typing sentences.</p>
+                        </div>
+                        <span class="bonus">+5 SEC</span>
+                    </div>
+
+                    <div class="instruction-stage">
+                        <span class="stage-number">02</span>
+                        <div>
+                            <strong>SECURITY OVERRIDE</strong>
+                            <p>Complete another 5 sentences.</p>
+                        </div>
+                        <span class="bonus">+5 SEC</span>
+                    </div>
+
+                    <div class="instruction-stage">
+                        <span class="stage-number">03</span>
+                        <div>
+                            <strong>FINAL DEFUSAL</strong>
+                            <p>Complete the final 5 sentences.</p>
+                        </div>
+                        <span class="bonus">+5 SEC</span>
+                    </div>
+                </div>
+
+                <div class="rules-box">
+                    <h3>MISSION RULES</h3>
+                    <ul>
+                        <li>Type every sentence exactly as displayed.</li>
+                        <li>Capitalization and punctuation matter.</li>
+                        <li>Your WPM and accuracy are tracked live.</li>
+                        <li>The countdown never pauses between stages.</li>
+                        <li>Every completed stage earns 5 extra seconds.</li>
+                        <li>If the timer reaches zero, the bomb explodes.</li>
+                    </ul>
+                </div>
+
+                <div class="briefing-alert">
+                    WARNING: THERE IS NO PAUSE BUTTON.
+                </div>
+            </div>
+
+            <button id="understand-btn" class="btn btn-primary">
+                I UNDERSTAND — START MISSION <span>→</span>
+            </button>
+        </section>
+
+        <!-- SCREEN 4: GAMEPLAY -->
+        <section id="game-screen" class="screen">
+            <button id="soundToggle" onclick="toggleSound()">
+    🔊 SOUND ON
+</button>
+
+            <div class="game-top">
+                <div>
+                    <p class="eyebrow">ACTIVE MISSION</p>
+                    <h2>DEVICE <span>ARMED</span></h2>
+                    <p class="game-difficulty" id="game-difficulty">
+                        EASY MODE
+                    </p>
+                </div>
+
+                <div class="timer-card" id="timer-card">
+                    <small>TIME REMAINING</small>
+                    <strong id="timer">02:00</strong>
+                    <span id="timer-warning">STAY FOCUSED</span>
+                </div>
+            </div>
+
+            <div class="bomb-card">
+                <div class="bomb-topline">
+                    <span>EXPLOSIVE DEVICE</span>
+                    <span id="device-status">● ARMED</span>
+                </div>
+
+                <div class="bomb-body">
+                    <div class="bomb-core">
+                        <div class="core-ring"></div>
+                        <div class="core-light"></div>
+                    </div>
+
+                    <div class="bomb-information">
+                        <p>DETONATION SEQUENCE</p>
+                        <strong id="bomb-display">ACTIVE</strong>
+                        <span>MANUAL DEFUSAL REQUIRED</span>
+                    </div>
+
+                    <div class="bomb-wires">
+                        <span class="wire red"></span>
+                        <span class="wire blue"></span>
+                        <span class="wire yellow"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-heading">
+                    <div>
+                        <p class="eyebrow">CURRENT OPERATION</p>
+                        <h3 id="stage-name">INITIAL CIRCUIT</h3>
+                    </div>
+                    <span id="stage-counter">STAGE 01 / 03</span>
+                </div>
+
+                <div class="stage-track">
+                    <div class="stage-progress" id="stage-progress"></div>
+                </div>
+
+                <div class="stage-indicators">
+                    <div class="stage-step current" id="step-1">01</div>
+                    <div class="stage-connector"></div>
+                    <div class="stage-step" id="step-2">02</div>
+                    <div class="stage-connector"></div>
+                    <div class="stage-step" id="step-3">03</div>
+                </div>
+
+                <p class="sentence-counter" id="sentence-counter">
+                    SENTENCE 01 / 05
+                </p>
+            </div>
+
+            <div class="typing-card">
+                <div class="typing-heading">
+                    <p class="eyebrow">TRANSMIT THE FOLLOWING TEXT</p>
+                    <span class="live-indicator">● LIVE</span>
+                </div>
+
+                <div id="target-text" class="target-text"></div>
+
+                <input
+                    type="text"
+                    id="typing-input"
+                    placeholder="Start typing the sentence here..."
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    disabled
+                >
+
+                <div class="typing-help">
+                    TYPE THE EXACT SENTENCE TO PROCEED
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span>WPM</span>
+                        <strong id="wpm">0</strong>
+                    </div>
+                    <div class="stat-box">
+                        <span>ACCURACY</span>
+                        <strong id="accuracy">100%</strong>
+                    </div>
+                    <div class="stat-box">
+                        <span>COMPLETED</span>
+                        <strong id="completed">0 / 15</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bonus-message" class="bonus-message"></div>
+        </section>
+
+        <!-- SCREEN 5: RESULTS -->
+        <section id="result-screen" class="screen">
+            <div class="result-content">
+                <div id="result-icon" class="result-icon">✓</div>
+                <p class="eyebrow" id="result-eyebrow">MISSION REPORT</p>
+                <h1 id="result-title">BOMB DEFUSED!</h1>
+                <p id="result-description"></p>
+
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <span>FINAL WPM</span>
+                        <strong id="final-wpm">0</strong>
+                    </div>
+                    <div class="result-stat">
+                        <span>ACCURACY</span>
+                        <strong id="final-accuracy">100%</strong>
+                    </div>
+                    <div class="result-stat">
+                        <span>SENTENCES</span>
+                        <strong id="final-sentences">0 / 15</strong>
+                    </div>
+                </div>
+
+                <div class="result-extra" id="result-extra"></div>
+
+                <button id="restart-btn" class="btn btn-primary">
+                    PLAY AGAIN ↻
+                </button>
+
+                <button id="menu-btn" class="btn btn-secondary">
+                    RETURN TO MAIN MENU
+                </button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            TYPO TICKING <span>•</span> EVERY SECOND COUNTS
+        </footer>
+
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
